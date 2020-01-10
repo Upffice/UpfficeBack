@@ -104,3 +104,12 @@ buildNumber.properties
 .flattened-pom.xml
 
 # End of https://www.gitignore.io/api/maven,intellij
+# Default ignored files
+/workspace.xml
+vcs.xml
+modules.xml
+misc.xml
+encodings.xml
+compiler.xml
+dataSources.local.xml
+dataSources.xml

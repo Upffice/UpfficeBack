@@ -7,8 +7,9 @@ import javax.persistence.Table;
 import java.sql.Date;
 
 @Entity
-@Table(name="employees")
-public class LoginDto {
+@Table(name = "employees")
+public class EmployeeDto {
+
     @Id
     @Column(name = "emp_id")
     private int emp_id;
@@ -37,10 +38,10 @@ public class LoginDto {
     @Column(name = "dep_id")
     private int dep_id;
 
-    public LoginDto() {
+    public EmployeeDto() {
     }
 
-    public LoginDto(int emp_id, String emp_pw, String emp_name, String emp_email, String position, Date hire_date, String extension_number, String phone_number, int dep_id) {
+    public EmployeeDto(int emp_id, String emp_pw, String emp_name, String emp_email, String position, Date hire_date, String extension_number, String phone_number, int dep_id) {
         this.emp_id = emp_id;
         this.emp_pw = emp_pw;
         this.emp_name = emp_name;
@@ -126,7 +127,7 @@ public class LoginDto {
 
     @Override
     public String toString() {
-        return "LoginDto{" +
+        return "Employee{" +
                 "emp_id=" + emp_id +
                 ", emp_pw='" + emp_pw + '\'' +
                 ", emp_name='" + emp_name + '\'' +

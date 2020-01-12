@@ -27,4 +27,12 @@ public class MyPageController {
         return null;
     }
 
+    @PutMapping("/update/phone/{id}")
+    public int updatePhoneInfo(@PathVariable("id") int id, @RequestBody String phoneNum) {
+       int chk =  repository.updatePhone(phoneNum, id); // 휴대폰 번호 수정하기
+       // 수정 된 행의 갯수 return 해주는 듯 chk이 1이면 1개의 row가 수정 되었다는 뜻
+       return chk;
+    }
+
+    // 비밀번호 수정하기
 }

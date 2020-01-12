@@ -17,6 +17,6 @@ public interface EmployeeRepository extends CrudRepository<EmployeeDto, Integer>
 
     @Modifying
     @Transactional
-    @Query("UPDATE EmployeeDto SET phone_number = ?1 WHERE emp_id = ?2")
-    int updatePhone(String phone_number, int emp_id);
+    @Query("UPDATE EmployeeDto SET emp_pw = ?1, phone_number = ?2 WHERE emp_id = ?3")
+    int updatePhone(String emp_pw, String phone_number, int emp_id);
 }

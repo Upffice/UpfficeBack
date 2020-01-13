@@ -9,6 +9,9 @@ import java.sql.Date;
 @Entity
 @Table(name = "employees")
 public class EmployeeDto {
+    /*
+     * Employees 테이블에 해당하는 Dto
+     */
 
     @Id
     @Column(name = "emp_id")

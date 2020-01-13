@@ -8,6 +8,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "department")
 public class DepartmentDto {
+    /*
+     * Department 테이블에 해당하는 Dto
+     */
 
     @Id
     @Column(name = "dep_id")

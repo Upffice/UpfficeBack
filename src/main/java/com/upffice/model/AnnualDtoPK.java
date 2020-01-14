@@ -3,7 +3,7 @@ package com.upffice.model;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class WorkingDtoPK implements Serializable {
+public class AnnualDtoPK implements Serializable {
     private int empId;
-    private Date workingDate;
+    private Date annualDate;
 }

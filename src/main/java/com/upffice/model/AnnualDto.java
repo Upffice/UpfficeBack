@@ -7,6 +7,10 @@ import java.sql.Date;
 @Table(name = "annual")
 @IdClass(AnnualDtoPK.class)
 public class AnnualDto {
+    /*
+     * Annual 테이블에 해당하는 Dto
+     */
+
     @Id
     @Column(name = "emp_id")
     private int empId;

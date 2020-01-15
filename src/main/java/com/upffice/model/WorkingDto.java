@@ -8,6 +8,10 @@ import java.sql.Time;
 @Table(name = "working")
 @IdClass(WorkingDtoPK.class)
 public class WorkingDto {
+    /*
+     * working 테이블에 해당하는 Dto
+     */
+
     @Id
     @Column(name = "emp_id")
     private int empId;
@@ -23,7 +27,7 @@ public class WorkingDto {
     private Time workingOut;
 
     @Column(name = "working_time")
-    private Time workingTime;
+    private String workingTime;
 
     public WorkingDto() {
     }
@@ -67,11 +71,11 @@ public class WorkingDto {
         this.workingOut = workingOut;
     }
 
-    public Time getWorkingTime() {
+    public String getWorkingTime() {
         return workingTime;
     }
 
-    public void setWorkingTime(Time workingTime) {
+    public void setWorkingTime(String workingTime) {
         this.workingTime = workingTime;
     }
 }

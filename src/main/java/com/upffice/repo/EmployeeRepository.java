@@ -6,6 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
+<<<<<<< HEAD
+=======
+import java.sql.Date;
+>>>>>>> origin/master
 
 public interface EmployeeRepository extends CrudRepository<EmployeeDto, Integer> {
     /*
@@ -28,4 +32,9 @@ public interface EmployeeRepository extends CrudRepository<EmployeeDto, Integer>
     @Transactional
     @Query("UPDATE EmployeeDto SET emp_pw = ?1, phone_number = ?2 WHERE emp_id = ?3")
     int updatePhone(String emp_pw, String phone_number, int emp_id);
+
+    /* UpfficeFront의 emp_id에 해당하는 입사일이 필요할 때 사용 */
+    @Query("SELECT hire_date FROM EmployeeDto WHERE emp_id=?1")
+    Date getHireDateById(int emp_id);
+
 }

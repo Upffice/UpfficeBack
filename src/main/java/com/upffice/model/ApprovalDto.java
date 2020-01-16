@@ -1,11 +1,13 @@
 package com.upffice.model;
 
+import org.hibernate.annotations.DynamicInsert;
+
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "approval")
-@SequenceGenerator(name = "seq", initialValue = 20200000, allocationSize = 1)
+@DynamicInsert
+@SequenceGenerator(name = "seq", initialValue =20200000, allocationSize = 1)
 public class ApprovalDto {
 
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
@@ -22,7 +24,7 @@ public class ApprovalDto {
     private int app_writer_id;
 
     @Column(name = "app_date")
-    private Date app_date;
+    private String app_date;
 
     @Column(name = "app_comment")
     private String app_comment;
@@ -51,14 +53,15 @@ public class ApprovalDto {
     @Column(name = "app_sign_id3")
     private int app_sign_id3;
 
+
     @Column(name = "app_sign_date1")
-    private Date app_sign_date1;
+    private String app_sign_date1;
 
     @Column(name = "app_sign_date2")
-    private Date app_sign_date2;
+    private String app_sign_date2;
 
     @Column(name = "app_sign_date3")
-    private Date app_sign_date3;
+    private String app_sign_date3;
 
     @Column(name = "app_status_check")
     private String app_status_check;
@@ -72,8 +75,80 @@ public class ApprovalDto {
     @Column(name = "app_status3")
     private String app_status3;
 
+    @Column(name = "app_writer_name")
+    private String app_writer_name;
+
+    @Column(name = "app_writer_position")
+    private String app_writer_position;
+
+    @Column(name = "app_writer_depid")
+    private int app_writer_depid;
+
+    @Column(name = "app_writer_depname")
+    private String app_writer_depname;
+
+
+
+
     public ApprovalDto() {
     }
+
+
+    public ApprovalDto(int app_doc_num,
+                       String app_type,
+                       String app_doc_title,
+                       int app_writer_id,
+                       String app_date,
+                       String app_comment,
+                       int app_ref_id1,
+                       int app_ref_id2,
+                       int app_ref_id3,
+                       String app_ref_file,
+                       String app_content,
+                       int  app_sign_id1,
+                       int  app_sign_id2,
+                       int  app_sign_id3,
+                       String  app_sign_date1,
+                       String   app_sign_date2,
+                       String   app_sign_date3,
+                       String   app_status_check,
+                       String  app_status1,
+                       String  app_status2,
+                       String  app_status3,
+                       String  app_writer_name,
+                       String  app_writer_position,
+                       String  app_writer_depname,
+                       int  app_writer_depid){
+
+
+                this.app_doc_num= app_doc_num;
+                this.app_type=app_type;
+                this.app_doc_title =app_doc_title;
+                this.app_writer_id = app_writer_id;
+                this.app_date = app_date;
+                this.app_comment = app_comment;
+                this.app_ref_id1 =app_ref_id1;
+                this.app_ref_id2 = app_ref_id2;
+                this.app_ref_id3 = app_ref_id3;
+                this.app_ref_file = app_ref_file;
+                this.app_content = app_content;
+                this.app_sign_id1 = app_sign_id1;
+                this.app_sign_id2 = app_sign_id2;
+                this.app_sign_id3 = app_sign_id3;
+                this.app_sign_date1 = app_sign_date1;
+                this.app_sign_date2 = app_sign_date2;
+                this.app_sign_date3 = app_sign_date3;
+                this.app_status_check = app_status_check;
+                this.app_status1 = app_status1;
+                this.app_status2 = app_status2;
+                this.app_status3 = app_status3;
+                this.app_writer_name = app_writer_name;
+                this.app_writer_position = app_writer_position;
+                this.app_writer_depname = app_writer_depname;
+                this.app_writer_depid = app_writer_depid;
+    }
+
+
 
     public int getApp_doc_num() {
         return app_doc_num;
@@ -107,14 +182,15 @@ public class ApprovalDto {
         this.app_writer_id = app_writer_id;
     }
 
-    public Date getApp_date() {
+    public String getApp_date() {
         return app_date;
     }
 
-    public void setApp_date(Date app_date) {
+
+    public void setApp_date(String app_date) {
         this.app_date = app_date;
     }
-
+;
     public String getApp_comment() {
         return app_comment;
     }
@@ -187,27 +263,27 @@ public class ApprovalDto {
         this.app_sign_id3 = app_sign_id3;
     }
 
-    public Date getApp_sign_date1() {
+    public String getApp_sign_date1() {
         return app_sign_date1;
     }
 
-    public void setApp_sign_date1(Date app_sign_date1) {
+    public void setApp_sign_date1(String app_sign_date1) {
         this.app_sign_date1 = app_sign_date1;
     }
 
-    public Date getApp_sign_date2() {
+    public String getApp_sign_date2() {
         return app_sign_date2;
     }
 
-    public void setApp_sign_date2(Date app_sign_date2) {
+    public void setApp_sign_date2(String app_sign_date2) {
         this.app_sign_date2 = app_sign_date2;
     }
 
-    public Date getApp_sign_date3() {
+    public String getApp_sign_date3() {
         return app_sign_date3;
     }
 
-    public void setApp_sign_date3(Date app_sign_date3) {
+    public void setApp_sign_date3(String app_sign_date3) {
         this.app_sign_date3 = app_sign_date3;
     }
 
@@ -243,9 +319,40 @@ public class ApprovalDto {
         this.app_status3 = app_status3;
     }
 
+    public String getApp_writer_name() {
+        return app_writer_name;
+    }
+
+    public void setApp_writer_name(String app_writer_name) {
+        this.app_writer_name = app_writer_name;
+    }
+
+    public String getApp_writer_position() {
+        return app_writer_position;
+    }
+
+    public void setApp_writer_position(String app_writer_position) {
+        this.app_writer_position = app_writer_position;
+    }
+
+    public int getApp_writer_depid() {
+        return app_writer_depid;
+    }
+
+    public void setApp_writer_depid(int app_writer_depid) {
+        this.app_writer_depid = app_writer_depid;
+    }
+
+    public String getApp_writer_depname() {
+        return app_writer_depname;
+    }
+
+    public void setApp_writer_depname(String app_writer_depname) {
+        this.app_writer_depname = app_writer_depname;
+    }
+
     @Override
     public String toString() {
-
         return "ApprovalDto{" +
                 "app_doc_num=" + app_doc_num +
                 ", app_type='" + app_type + '\'' +
@@ -268,7 +375,10 @@ public class ApprovalDto {
                 ", app_status1='" + app_status1 + '\'' +
                 ", app_status2='" + app_status2 + '\'' +
                 ", app_status3='" + app_status3 + '\'' +
+                ", app_writer_name='" + app_writer_name + '\'' +
+                ", app_writer_position='" + app_writer_position + '\'' +
+                ", app_writer_depid=" + app_writer_depid +
+                ", app_writer_depname='" + app_writer_depname + '\'' +
                 '}';
     }
-
 }

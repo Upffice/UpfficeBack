@@ -1,10 +1,9 @@
 package com.upffice.repo;
 
-import java.util.List;
-
+import com.upffice.model.Customer;
 import org.springframework.data.repository.CrudRepository;
 
-import com.upffice.model.Customer;
+import java.util.List;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
     List<Customer> findByAge(int age);

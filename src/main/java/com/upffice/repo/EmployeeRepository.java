@@ -6,10 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
-<<<<<<< HEAD
-=======
 import java.sql.Date;
->>>>>>> origin/master
+
 
 public interface EmployeeRepository extends CrudRepository<EmployeeDto, Integer> {
     /*

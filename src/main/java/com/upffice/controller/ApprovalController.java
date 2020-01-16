@@ -17,7 +17,7 @@ public class ApprovalController {
     @Autowired
     ApprovalRepository repository;
 
-    //select all --결재대기함--
+    //select all --결재대기함---
     @GetMapping("/{emp_id}")
     public List<ApprovalDto> getAllApproval(@PathVariable("emp_id") int emp_id) {
 

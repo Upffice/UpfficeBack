@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface EmployeesRepository extends CrudRepository<EmployeesAddressDto,Integer>{
-    List<EmployeesAddressDto> findByNameLike(String emp_name);
+public interface EmployeesAddressRepository extends CrudRepository<EmployeesAddressDto,Integer>{
+    List<EmployeesAddressDto> findByNameLike(String name);
 
 }

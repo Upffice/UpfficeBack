@@ -20,7 +20,7 @@ private int out_id;
     private String out_email;
 
     @Column(name = "out_company")
-    private String out_company;
+    private String outCompany;
 
     @Column(name = "out_dep_phone")
     private String out_dep_phone ;
@@ -34,7 +34,7 @@ private int out_id;
         this.outName = out_name;
         this.out_mobile = out_mobile;
         this.out_email = out_email;
-        this.out_company = out_company;
+        this.outCompany = out_company;
         this.out_dep_phone = out_dep_phone;
     }
 
@@ -71,12 +71,12 @@ private int out_id;
         this.out_email = out_email;
     }
 
-    public String getOut_company() {
-        return out_company;
+    public String getOutCompany() {
+        return outCompany;
     }
 
-    public void setOut_company(String out_company) {
-        this.out_company = out_company;
+    public void setOutCompany(String out_company) {
+        this.outCompany = out_company;
     }
 
     public String getOut_dep_phone() {
@@ -94,8 +94,9 @@ private int out_id;
                 ", out_name='" + outName + '\'' +
                 ", out_mobile='" + out_mobile + '\'' +
                 ", out_email='" + out_email + '\'' +
-                ", out_company='" + out_company + '\'' +
+                ", out_company='" + outCompany + '\'' +
                 ", out_dep_phone='" + out_dep_phone + '\'' +
                 '}';
+
     }
 }

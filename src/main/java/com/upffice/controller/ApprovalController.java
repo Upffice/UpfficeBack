@@ -36,7 +36,6 @@ public class ApprovalController {
         approvalDto.setApp_sign_date2(new SimpleDateFormat("yyyy/MM/dd hh:mm").format(System.currentTimeMillis()));
         approvalDto.setApp_sign_date3(new SimpleDateFormat("yyyy/MM/dd hh:mm").format(System.currentTimeMillis()));
 
-
         ApprovalDto approval =
                 repository.save(new ApprovalDto(
                                 approvalDto.getApp_doc_num(),

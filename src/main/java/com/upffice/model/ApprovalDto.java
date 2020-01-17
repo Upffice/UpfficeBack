@@ -183,14 +183,14 @@ public class ApprovalDto {
     }
 
     public String getApp_date() {
-        return app_date;
+        return app_date.substring(0, 16);
     }
 
 
     public void setApp_date(String app_date) {
         this.app_date = app_date;
     }
-;
+
     public String getApp_comment() {
         return app_comment;
     }
@@ -264,7 +264,7 @@ public class ApprovalDto {
     }
 
     public String getApp_sign_date1() {
-        return app_sign_date1;
+        return app_sign_date1.substring(0, 16);
     }
 
     public void setApp_sign_date1(String app_sign_date1) {
@@ -272,7 +272,8 @@ public class ApprovalDto {
     }
 
     public String getApp_sign_date2() {
-        return app_sign_date2;
+        return app_sign_date2.substring(0, 16);
+
     }
 
     public void setApp_sign_date2(String app_sign_date2) {
@@ -280,7 +281,8 @@ public class ApprovalDto {
     }
 
     public String getApp_sign_date3() {
-        return app_sign_date3;
+        return app_sign_date3.substring(0, 16);
+
     }
 
     public void setApp_sign_date3(String app_sign_date3) {

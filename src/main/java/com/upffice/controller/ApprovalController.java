@@ -2,7 +2,11 @@ package com.upffice.controller;
 
 
 import com.upffice.model.ApprovalDto;
+import com.upffice.model.DepartmentDto;
+import com.upffice.model.EmployeeDto;
 import com.upffice.repo.ApprovalRepository;
+import com.upffice.repo.DepartmentRepository;
+import com.upffice.repo.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +20,12 @@ public class ApprovalController {
 
     @Autowired
     ApprovalRepository repository;
+
+    @Autowired
+    DepartmentRepository depRepo;
+
+    @Autowired
+    EmployeeRepository empRepo;
 
     //select all --결재대기함---
     @GetMapping("/{emp_id}")
@@ -67,4 +77,23 @@ public class ApprovalController {
         return approval;
     }
 
+
+    @PostMapping("/search/dep")
+    public Iterable<DepartmentDto> searchDep(){
+        System.out.println("searchDep진입");
+        Iterable<DepartmentDto> dto =depRepo.findAll();
+//        ArrayList<DepartmentDto> dto = depRepo.selectAll();
+
+
+        return dto;
+    }
+
+    @PostMapping("/search/emp")
+    public Iterable<EmployeeDto> searchEmp(){
+        System.out.println("searchEmp진입");
+        Iterable<EmployeeDto> dto =empRepo.findAll();
+//        ArrayList<DepartmentDto> dto = depRepo.selectAll();
+
+        return dto;
+    }
 }

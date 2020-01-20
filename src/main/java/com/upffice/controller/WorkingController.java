@@ -98,6 +98,14 @@ public class WorkingController {
     //WorkingStatus에서 사용
     //------------------------------------------------------------------------------------------
 
+    @GetMapping("/workings/{empId}")
+    public List<WorkingDto> readWorkings(@PathVariable("empId") int empId/*,@RequestParam("yearMonth") String yearMonth*/) {
+//        String firstday = yearMonth + "-01";
+//        String nextFirstday ="-01";
+
+        List<WorkingDto> workings = workingRepository.test(empId);
+        return workings;
+    }
 
     //------------------------------------------------------------------------------------------
     //AnnulDetail에서 사용

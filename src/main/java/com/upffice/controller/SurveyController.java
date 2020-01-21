@@ -10,7 +10,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,11 +32,32 @@ public class SurveyController {
         System.out.println(_addsurvey+"찍어보자 데이터");
         return _addsurvey;
     }
-    //저장된 데이터를 모두 출력하는 메서드
+    //진행중인 설문을 모두 출력하는 메서드
     @GetMapping("/allsurvey")
     public List<SurveyDto> getAllSurvey(){
         System.out.println("getAllsurvey");
-        List<SurveyDto> survey = repository.getAllSurveys();
+
+        SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd 09:00:00");
+        Calendar cal = Calendar.getInstance();
+        String today = formatter.format(cal.getTime());
+        Timestamp current_date = Timestamp.valueOf(today);
+
+        List<SurveyDto> survey = repository.getAllSurveys(current_date);
+
+        return survey;
+    }
+
+    //마감된 설문을 모두 출력하는 메서드
+    @GetMapping("/endsurvey")
+    public List<SurveyDto> getEndSurvey(){
+        System.out.println("getEndsurvey");
+
+        SimpleDateFormat formatter = new SimpleDateFormat ("yyyy-MM-dd 09:00:00");
+        Calendar cal = Calendar.getInstance();
+        String today = formatter.format(cal.getTime());
+        Timestamp current_date = Timestamp.valueOf(today);
+
+        List<SurveyDto> survey = repository.getEndSurveys(current_date);
 
         return survey;
     }

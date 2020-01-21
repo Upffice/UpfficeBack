@@ -15,8 +15,8 @@ public class PostDto {
     @Column(name = "board_name")
     private String board_name;
 
-    @Column(name = "header")
-    private String header;
+    @Column(name = "post_dep_id")
+    private int post_dep_id;
 
     @Column(name = "post_writer")
     private String post_writer;
@@ -37,9 +37,9 @@ public class PostDto {
     public PostDto() {
     }
 
-    public PostDto(String board_name, String header, String post_writer, String post_subject, String post_content) {
+    public PostDto(String board_name, int post_dep_id, String post_writer, String post_subject, String post_content) {
         this.board_name=board_name;
-        this.header=header;
+        this.post_dep_id=post_dep_id;
         this.post_writer=post_writer;
         this.post_subject=post_subject;
         this.post_content=post_content;
@@ -61,12 +61,12 @@ public class PostDto {
         this.board_name = board_name;
     }
 
-    public String getHeader() {
-        return header;
+    public int getPost_dep_id() {
+        return post_dep_id;
     }
 
-    public void setHeader(String header) {
-        this.header = header;
+    public void setPost_dep_id(int post_dep_id) {
+        this.post_dep_id = post_dep_id;
     }
 
     public String getPost_writer() {
@@ -93,8 +93,8 @@ public class PostDto {
         this.post_content = post_content;
     }
 
-    public String getCreated() {
-        return new SimpleDateFormat("yyyy/MM/dd hh:mm").format(created);
+    public Date getCreated() {
+        return created;
     }
 
     public void setCreated(Date created) {
@@ -111,10 +111,10 @@ public class PostDto {
 
     @Override
     public String toString() {
-        return "Posts{" +
+        return "PostDto{" +
                 "post_id=" + post_id +
                 ", board_name='" + board_name + '\'' +
-                ", header='" + header + '\'' +
+                ", post_dep_id=" + post_dep_id +
                 ", post_writer='" + post_writer + '\'' +
                 ", post_subject='" + post_subject + '\'' +
                 ", post_content='" + post_content + '\'' +
@@ -122,6 +122,4 @@ public class PostDto {
                 ", post_views=" + post_views +
                 '}';
     }
-
-
 }

@@ -19,32 +19,33 @@ public class PostController {
     PostRepository repository;
 
     // 게시글 저장 하는 메소드
-        @PostMapping("/post")
-        public PostDto postBoard(@RequestBody PostDto postDto){
-            System.out.println(postDto + "post 찍어보기");
-            PostDto _post=repository.save(new PostDto(postDto.getBoard_name(), postDto.getHeader(), postDto.getPost_writer(), postDto.getPost_subject(), postDto.getPost_content()));
-            System.out.println(_post+"_post");
-            return _post;
+    @PostMapping("/post")
+    public PostDto postBoard(@RequestBody PostDto postDto){
+        System.out.println(postDto + "post 찍어보기");
+        PostDto _post=repository.save(new PostDto(postDto.getBoard_name(), postDto.getPost_dep_id(), postDto.getPost_writer(), postDto.getPost_subject(), postDto.getPost_content()));
+        System.out.println(_post+"_post");
+
+        return _post;
     }
 
     //저장된 게시물을 보내주는 메소드
     @GetMapping("/posts")
     public List<PostDto> getAllPosts(){
 
-            List<PostDto> posts =new ArrayList<>();
-            repository.findAll().forEach(posts::add);
+        List<PostDto> posts = repository.getAllPosts();
 
-            return posts;
+        return posts;
     }
     @DeleteMapping("/delete/{post_id}")
     public ResponseEntity<String> deletePost(@PathVariable("post_id")int post_id){
-            System.out.println("Delete Customer with ID =" + post_id+"...");
-            repository.deleteById(post_id);
+        System.out.println("Delete Customer with ID =" + post_id+"...");
+        repository.deleteById(post_id);
 
-            return new ResponseEntity<>("Customer has been deleted!", HttpStatus.OK);
+        return new ResponseEntity<>("Customer has been deleted!", HttpStatus.OK);
     }
     //이 기능을 수행하면 조회수가 +1 되어 DB에 저장되는 메서드
     @PutMapping("/view/{post_id}")
+
     public ResponseEntity<PostDto> updateView(@PathVariable("post_id") int post_id){
         System.out.println("get post_view");
         Optional<PostDto> PostsData = repository.findById(post_id);

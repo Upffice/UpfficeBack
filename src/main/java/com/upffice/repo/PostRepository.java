@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface PostRepository extends CrudRepository<PostDto,Integer> {
 
-    @Query("SELECT p FROM PostDto p WHERE p.post_dep_id=0 ORDER BY p.post_id desc")
-    public List<PostDto> getAllPosts();
+    @Query("SELECT p FROM PostDto p WHERE p.post_dep_id=?1 ORDER BY p.post_id desc")
+    public List<PostDto> getAllPosts(int post_dep_id);
 
     @Modifying
     @Transactional

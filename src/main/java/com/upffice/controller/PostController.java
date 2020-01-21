@@ -29,10 +29,10 @@ public class PostController {
     }
 
     //저장된 게시물을 보내주는 메소드
-    @GetMapping("/posts")
-    public List<PostDto> getAllPosts(){
+    @GetMapping("/posts/{post_dep_id}")
+    public List<PostDto> getAllPosts(@PathVariable("post_dep_id") int post_dep_id){
 
-        List<PostDto> posts = repository.getAllPosts();
+        List<PostDto> posts = repository.getAllPosts(post_dep_id);
 
         return posts;
     }
@@ -66,7 +66,6 @@ public class PostController {
         System.out.println("post_id, 수정데이터 "+ post_id +"  "+ updateData);
         repository.updatePost(updateData.getPost_subject(), updateData.getPost_content(), null, post_id);
     }
-
 
 
 }

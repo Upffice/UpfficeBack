@@ -3,6 +3,9 @@ package com.upffice.controller;
 import com.upffice.model.PostDto;
 import com.upffice.repo.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -67,5 +70,12 @@ public class PostController {
         repository.updatePost(updateData.getPost_subject(), updateData.getPost_content(), null, post_id);
     }
 
+//    @GetMapping("/paging/{post_dep_id}")
+//    public List<PostDto> getAllCount(@PathVariable("post_dep_id") int post_dep_id){
+//
+//        List<PostDto>  count = repository.getAPagePosts(post_dep_id, 12);
+//
+//        return count;
+//    }
 
 }

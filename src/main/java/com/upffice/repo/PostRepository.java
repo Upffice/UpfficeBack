@@ -1,5 +1,6 @@
 package com.upffice.repo;
 import com.upffice.model.PostDto;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -8,10 +9,15 @@ import javax.transaction.Transactional;
 import java.sql.Date;
 import java.util.List;
 
-public interface PostRepository extends CrudRepository<PostDto,Integer> {
+public interface PostRepository extends JpaRepository<PostDto,Integer> {
 
+    // post_dep_id에 맞춰서 전체 게시글 가져오는 쿼리
     @Query("SELECT p FROM PostDto p WHERE p.post_dep_id=?1 ORDER BY p.post_id desc")
     public List<PostDto> getAllPosts(int post_dep_id);
+
+//    // 전체 게시물의 count
+//    @Query("SELECT count(p) FROM PostDto p WHERE p.post_dep_id=?1 ORDER BY p.post_id desc")
+//    public int getPostCount(int post_dep_id);
 
     @Modifying
     @Transactional

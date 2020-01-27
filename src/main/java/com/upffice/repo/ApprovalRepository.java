@@ -12,5 +12,11 @@ public interface ApprovalRepository extends CrudRepository<ApprovalDto, Integer>
         @Query("SELECT a FROM ApprovalDto a WHERE a.app_sign_id1=?1 or a.app_sign_id2=?2 or a.app_sign_id3=?3 order by a.app_doc_num desc")
         List<ApprovalDto> findBySignId(int app_sign_id1, int app_sign_id2, int app_sign_id3);
 
+        @Query("SELECT a From ApprovalDto a WHERE a.app_doc_num=?1")
+        ApprovalDto findByApp_doc_num(int app_doc_num);
 
+        /*@Modifying
+        @Transactional
+        @Query("UPDATE ApprovalDto SET emp_pw = ?1, phone_number = ?2 WHERE emp_id = ?3")
+        int updatePhone(String emp_pw, String phone_number, int emp_id);*/
 }

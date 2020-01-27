@@ -7,10 +7,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "approval")
 @DynamicInsert
-@SequenceGenerator(name = "seq", initialValue =20200000, allocationSize = 1)
+@SequenceGenerator(name = "seq",initialValue =20200000, allocationSize = 1)
 public class ApprovalDto {
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "seq")
     @Id
     private int app_doc_num;
 

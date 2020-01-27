@@ -80,20 +80,25 @@ public class ApprovalController {
 
     @PostMapping("/search/dep")
     public Iterable<DepartmentDto> searchDep(){
-        System.out.println("searchDep진입");
         Iterable<DepartmentDto> dto =depRepo.findAll();
-//        ArrayList<DepartmentDto> dto = depRepo.selectAll();
-
 
         return dto;
     }
 
     @PostMapping("/search/emp")
     public Iterable<EmployeeDto> searchEmp(){
-        System.out.println("searchEmp진입");
         Iterable<EmployeeDto> dto =empRepo.findAll();
-//        ArrayList<DepartmentDto> dto = depRepo.selectAll();
+
+        return dto;
+
+    }
+
+    @GetMapping("/sign/wait/{app_doc_num}")
+    public ApprovalDto searchDoc(@PathVariable("app_doc_num") int app_doc_num){
+        ApprovalDto dto = repository.findByApp_doc_num(app_doc_num);
 
         return dto;
     }
+
+
 }

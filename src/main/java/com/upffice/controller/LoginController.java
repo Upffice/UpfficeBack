@@ -31,6 +31,8 @@ public class LoginController {
     /* UpfficeFront의 TopMenu.vue 에 들어갈 이름을 가져오기 위한 메소드 */
     @PostMapping("login/name/{id}")
     public String getName(@PathVariable int id) {
+        System.out.println("진입쓰");
+        System.out.println(id);
         String name = repository.getNameById(id);
 
         if(name != null) {

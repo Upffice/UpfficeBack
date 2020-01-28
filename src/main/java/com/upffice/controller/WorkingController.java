@@ -98,12 +98,11 @@ public class WorkingController {
     //WorkingStatus에서 사용
     //------------------------------------------------------------------------------------------
 
+    // UpfficeFront 의 WorkingStatus.vue에서 조회하는 달의 시작일과 마지막일을 파라미터로 받아서 조회 시, 매핑 됨
+    // 특정 달 근무 내역 조회
     @GetMapping("/workings/{empId}")
-    public List<WorkingDto> readWorkings(@PathVariable("empId") int empId/*,@RequestParam("yearMonth") String yearMonth*/) {
-//        String firstday = yearMonth + "-01";
-//        String nextFirstday ="-01";
-
-        List<WorkingDto> workings = workingRepository.test(empId);
+    public List<WorkingDto> readWorkings(@PathVariable("empId") int empId,@RequestParam("start") String startOfMonth,@RequestParam("end") String endOfMonth) {
+        List<WorkingDto> workings = workingRepository.findMonthWorkingByEmpId(empId,startOfMonth,endOfMonth);
         return workings;
     }
 

@@ -1,5 +1,9 @@
 package com.upffice.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.upffice.controller.SqlTimeDeserializer;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
@@ -22,12 +26,16 @@ public class ScheduleDto {
     @Column(name = "sche_start_date")
     private Date sche_start_date;
 
+    @JsonFormat(pattern = "HH:mm")
+    @JsonDeserialize(using = SqlTimeDeserializer.class)
     @Column(name = "sche_start_time")
     private Time sche_start_time;
 
     @Column(name = "sche_end_date")
     private Date sche_end_date;
 
+    @JsonFormat(pattern = "HH:mm")
+    @JsonDeserialize(using = SqlTimeDeserializer.class)
     @Column(name = "sche_end_time")
     private Time sche_end_time;
 
@@ -40,13 +48,22 @@ public class ScheduleDto {
     @Column(name = "emp_id")
     private int emp_id;
 
-    @Column(name = "dep_id")
-    private int dep_id;
-
     @Column(name = "calendar_id")
     private int calendar_id;
 
     public ScheduleDto() {
+    }
+
+    public ScheduleDto(int emp_id, int calendar_id, String sche_name, Date sche_start_date, Time sche_start_time, Date sche_end_date, Time sche_end_time, String sche_place, String sche_detail) {
+        this.emp_id = emp_id;
+        this.calendar_id = calendar_id;
+        this.sche_name = sche_name;
+        this.sche_start_date = sche_start_date;
+        this.sche_start_time = sche_start_time;
+        this.sche_end_date = sche_end_date;
+        this.sche_end_time = sche_end_time;
+        this.sche_place = sche_place;
+        this.sche_detail = sche_detail;
     }
 
     public int getSche_id() {
@@ -121,14 +138,6 @@ public class ScheduleDto {
         this.emp_id = emp_id;
     }
 
-    public int getDep_id() {
-        return dep_id;
-    }
-
-    public void setDep_id(int dep_id) {
-        this.dep_id = dep_id;
-    }
-
     public int getCalendar_id() {
         return calendar_id;
     }
@@ -149,7 +158,6 @@ public class ScheduleDto {
                 ", sche_place='" + sche_place + '\'' +
                 ", sche_detail='" + sche_detail + '\'' +
                 ", emp_id=" + emp_id +
-                ", dep_id=" + dep_id +
                 ", calendar_id=" + calendar_id +
                 '}';
     }

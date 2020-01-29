@@ -17,12 +17,12 @@ public class AnnualDto {
 
     @Id
     @Column(name = "annual_date")
-    private Date annualDate;
+    private String annualDate;
 
     public AnnualDto() {
     }
 
-    public AnnualDto(int empId, Date annualDate) {
+    public AnnualDto(int empId, String annualDate) {
         this.empId=empId;
         this.annualDate=annualDate;
     }
@@ -35,11 +35,11 @@ public class AnnualDto {
         this.empId = empId;
     }
 
-    public Date getAnnualDate() {
+    public String getAnnualDate() {
         return annualDate;
     }
 
-    public void setAnnualDate(Date annualDate) {
+    public void setAnnualDate(String annualDate) {
         this.annualDate = annualDate;
     }
 }

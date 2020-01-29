@@ -6,5 +6,5 @@ import java.sql.Date;
 //Annual 테이블의 기본키를 정의하는 클래스
 public class AnnualDtoPK implements Serializable {
     private int empId;
-    private Date annualDate;
+    private String annualDate;
 }

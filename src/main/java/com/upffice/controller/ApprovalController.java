@@ -30,11 +30,34 @@ public class ApprovalController {
     //select all --결재대기함---
     @GetMapping("/{emp_id}")
     public List<ApprovalDto> getAllApproval(@PathVariable("emp_id") int emp_id) {
-
+/*자신이 결재자에 포함된 문서 불러오기*/
         List<ApprovalDto> approval =repository.findBySignId(emp_id,emp_id,emp_id);
 
         return approval;
 
+    }
+
+    @GetMapping("/writer/{emp_id}")
+    public List<ApprovalDto> getAllApprovals(@PathVariable("emp_id") int emp_id){
+        /*자신이 상신한 문서 불러오기*/
+        List<ApprovalDto> dtoArr = repository.findByWriterId(emp_id);
+
+        return dtoArr;
+    }
+
+    @GetMapping("/all")
+    public List<ApprovalDto> getAllDocs(){
+        /*모든문서 가져오기*/
+        List<ApprovalDto> dtoArr = repository.findDocs();
+        return dtoArr;
+    }
+
+    @GetMapping("/depfind/{dep_id}")
+    public List<ApprovalDto> getDepDocs(@PathVariable("dep_id") int dep_id){
+
+        List<ApprovalDto> dtoArr = repository.findByDepId(dep_id);
+
+        return dtoArr;
     }
 
     //insert --기안문작성--

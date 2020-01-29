@@ -33,25 +33,24 @@ public class EmployeesAddressDto {
     private String phone_number ;
 
     @Column(name = "dep_id")
-    private String dep_id ;
+    private int dep_id ;
 
 
     public EmployeesAddressDto() {
     }
 
-    public EmployeesAddressDto(int emp_id, String emp_pw, String emp_name, String emp_email, Date hire_date, String extension_number, String phone_number, String dep_id) {
+    public EmployeesAddressDto(int emp_id, String emp_pw, String emp_name, String emp_email, String position, Date hire_date, String extension_number, String phone_number, int dep_id) {
         this.emp_id = emp_id;
         this.emp_pw = emp_pw;
         this.name = emp_name;
         this.emp_email = emp_email;
+        this.position = position;
         this.hire_date = hire_date;
         this.extension_number = extension_number;
         this.phone_number = phone_number;
         this.dep_id = dep_id;
     }
 
-    public EmployeesAddressDto(int emp_id, String emp_pw, String name, String emp_email, String position, Date hire_date, String extension_number, String phone_number, String dep_id) {
-    }
 
     public int getEmp_id() {
         return emp_id;
@@ -117,11 +116,11 @@ public class EmployeesAddressDto {
         this.phone_number = phone_number;
     }
 
-    public String getDep_id() {
+    public int getDep_id() {
         return dep_id;
     }
 
-    public void setDep_id(String dep_id) {
+    public void setDep_id(int dep_id) {
         this.dep_id = dep_id;
     }
 

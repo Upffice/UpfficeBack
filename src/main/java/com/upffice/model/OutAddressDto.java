@@ -7,14 +7,14 @@ import javax.persistence.*;
 @Table(name = "outaddress")
 public class OutAddressDto {
     @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-private int out_id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int out_id;
 
     @Column(name = "out_name")
     private String outName;
 
     @Column(name = "out_mobile")
-    private String out_mobile ;
+    private String out_mobile;
 
     @Column(name = "out_email")
     private String out_email;
@@ -23,7 +23,7 @@ private int out_id;
     private String outCompany;
 
     @Column(name = "out_dep_phone")
-    private String out_dep_phone ;
+    private String out_dep_phone;
 
 
     public OutAddressDto() {

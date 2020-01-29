@@ -1,6 +1,5 @@
 package com.upffice.controller;
 
-
 import com.upffice.model.OutAddressDto;
 import com.upffice.repo.OutAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,36 +24,31 @@ public class OutAddressController {
         return outaddresses;
     }
 
-    @PostMapping("/outaddress")
-    public OutAddressDto postBoard(@RequestBody OutAddressDto outAddressDto) {
-        OutAddressDto _outaddress = repository.save(new OutAddressDto(outAddressDto.getOut_id(),
-                outAddressDto.getOutName(), outAddressDto.getOut_mobile(),
-                outAddressDto.getOut_email(), outAddressDto.getOutCompany(), outAddressDto.getOut_dep_phone()));
-        return _outaddress;
-    }
-
-
-    @GetMapping("/outaddress/outName/{outName}")
-    public List<OutAddressDto> findByNameLike(@PathVariable("out_name") String outName) {
-        System.out.println("이름으로 찾기");
-        List<OutAddressDto> outaddress = repository.findByOutNameLike("%"+outName+"%");
-        return outaddress;
-    }
-
-    @GetMapping("/outaddress/outCompany/{outCompany}")
-    public List<OutAddressDto> findByOutCompanyLike(@PathVariable("outCompany") String outCompany) {
-        System.out.println("회사 이름으로 찾기");
-        List<OutAddressDto> outaddress = repository.findByOutCompanyLike("%"+outCompany+"%");
-        return outaddress;
-    }
 
     @GetMapping("/outaddress/nameAndCompany/{nameAndCompany}")
-    public List<OutAddressDto> findByNameAndOutCompanyLike(@PathVariable("nameAndCompany") String outCompany, String outName) {
-        System.out.println("회사 이름으로 찾기");
-        List<OutAddressDto> outaddress = repository.findByNameAndOutCompanyLike("%+outName+%","%"+outCompany+"%");
+    public List<OutAddressDto> findByNameAndOutCompanyLike(@PathVariable("nameAndCompany")  String nameAndCompany) {
+        System.out.println("성명,회사로 찾기");
+        List<OutAddressDto> outaddress = repository.findByNameAndOutCompanyLike("%"+nameAndCompany+"%","%"+nameAndCompany+"%");
         return outaddress;
     }
 
+    @PutMapping("/update/{id}")
+    public int outAddressUpdate(@PathVariable("id") int id, @RequestBody OutAddressDto data){
+        int _outAddress = repository.managerOutUpdate(data.getOutName(), data.getOut_mobile(),
+                data.getOut_email(),data.getOutCompany(), data.getOut_dep_phone(), id);
+        return _outAddress;
+    }
+
+    @PostMapping("/outaddress/add")                                    /*내부주소록 직원 추가*/
+    public OutAddressDto addEmployees(@RequestBody OutAddressDto outAddressDto) {
+        System.out.println(outAddressDto);
+        OutAddressDto _outAddress = repository.save(new OutAddressDto(outAddressDto.getOut_id(),
+                outAddressDto.getOutName(),outAddressDto.getOut_mobile(), outAddressDto.getOut_email(),outAddressDto.getOutCompany(),
+                outAddressDto.getOut_dep_phone()));
+        System.out.println(_outAddress);
+        return _outAddress;
+
+    }
 
 
 }

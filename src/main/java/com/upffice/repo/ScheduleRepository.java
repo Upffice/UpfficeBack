@@ -23,5 +23,4 @@ public interface ScheduleRepository extends CrudRepository<ScheduleDto, Integer>
             "and s.sche_start_date <= STR_TO_DATE(?3, '%Y-%m-%d') and s.sche_end_date >= STR_TO_DATE(?3, '%Y-%m-%d')"
             , nativeQuery=true)
     List<ScheduleDto> getScheduleByScheId(int emp_id, int sche_id, String date);
-
 }

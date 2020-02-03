@@ -32,6 +32,23 @@ public class OutAddressController {
         return outaddress;
     }
 
+
+    @GetMapping("/outaddress/outCompany")
+    public List<OutAddressDto> findAllByOrderByOutCompanyAsc() {
+        System.out.println("회사 이름으로 정렬");
+        List<OutAddressDto> outaddress = repository.findAllByOrderByOutCompanyAsc();
+        return outaddress;
+    }
+
+
+    @GetMapping("/outaddress/outName")
+    public List<OutAddressDto> findAllByOrderByOutNameAsc() {
+        System.out.println("외부 이름으로 정렬");
+        List<OutAddressDto> outaddress = repository.findAllByOrderByOutNameAsc();
+        return outaddress;
+    }
+
+
     @PutMapping("/update/{id}")
     public int outAddressUpdate(@PathVariable("id") int id, @RequestBody OutAddressDto data){
         int _outAddress = repository.managerOutUpdate(data.getOutName(), data.getOut_mobile(),

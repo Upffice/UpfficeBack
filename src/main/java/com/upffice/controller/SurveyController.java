@@ -1,9 +1,7 @@
 package com.upffice.controller;
 
 
-import com.upffice.model.ParticipantsDto;
 import com.upffice.model.SurveyDto;
-import com.upffice.repo.ParticipantsRepository;
 import com.upffice.repo.SurveyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,10 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -45,6 +41,14 @@ public class SurveyController {
         List<SurveyDto> survey = repository.getAllSurveys(current_date);
 
         return survey;
+    }
+    //등록된 설문을 삭제하는 메서드
+    @DeleteMapping("/deletesurvey/{survey_id}")
+    public ResponseEntity<String> deleteSurvey(@PathVariable("survey_id")int survey_id){
+        System.out.println("Delete Suvey = ? "+ survey_id);
+        repository.deleteById(survey_id);
+
+        return new ResponseEntity<>("delete", HttpStatus.OK);
     }
 
     //마감된 설문을 모두 출력하는 메서드

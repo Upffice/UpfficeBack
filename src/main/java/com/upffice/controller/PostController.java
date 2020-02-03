@@ -70,12 +70,12 @@ public class PostController {
         repository.updatePost(updateData.getPost_subject(), updateData.getPost_content(), null, post_id);
     }
 
-//    @GetMapping("/paging/{post_dep_id}")
-//    public List<PostDto> getAllCount(@PathVariable("post_dep_id") int post_dep_id){
-//
-//        List<PostDto>  count = repository.getAPagePosts(post_dep_id, 12);
-//
-//        return count;
-//    }
+    //부서별로 출력하기 위하여 board_name 에 해당하는 데이터를 넘겨주는 메서드
+    @GetMapping("/dep_posts/{board_name}")
+    public List<PostDto> depPost(@PathVariable("board_name") String board_name){
+        List<PostDto> dep_post =repository.getAllDepPosts(board_name);
+        System.out.println(dep_post+ "-----dep Post");
+        return dep_post;
+    }
 
 }

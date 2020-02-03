@@ -6,4 +6,5 @@ import java.io.Serializable;
 public class ParticipantsDtoPK implements Serializable {
     private int survey_id;
     private int emp_id;
+
 }

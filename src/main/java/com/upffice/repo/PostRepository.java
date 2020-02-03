@@ -15,9 +15,9 @@ public interface PostRepository extends JpaRepository<PostDto,Integer> {
     @Query("SELECT p FROM PostDto p WHERE p.post_dep_id=?1 ORDER BY p.post_id desc")
     public List<PostDto> getAllPosts(int post_dep_id);
 
-//    // 전체 게시물의 count
-//    @Query("SELECT count(p) FROM PostDto p WHERE p.post_dep_id=?1 ORDER BY p.post_id desc")
-//    public int getPostCount(int post_dep_id);
+    @Query("SELECT u FROM PostDto u WHERE u.board_name=?1")
+    public List<PostDto> getAllDepPosts(String board_name);
+
 
     @Modifying
     @Transactional

@@ -25,14 +25,12 @@ public interface ApprovalRepository extends CrudRepository<ApprovalDto, Integer>
                 " ON e.emp_id = a.app_sign_id1 OR e.emp_id = a.app_sign_id2 OR e.emp_id = a.app_sign_id3 WHERE e.dep_id=?1 order by a.app_doc_num desc")
         List<ApprovalDto> findByDepId(int dep_id);
 
-       /* select a.* from approval a
-        join employees e
-        on e.emp_id = a.app_sign_id1
-        or e.emp_id = a.app_sign_id2
-        or e.emp_id = a.app_sign_id3
-        where e.dep_id = 4;*/
-        /*@Modifying
-        @Transactional
-        @Query("UPDATE ApprovalDto SET emp_pw = ?1, phone_number = ?2 WHERE emp_id = ?3")
-        int updatePhone(String emp_pw, String phone_number, int emp_id);*/
+        @Query("SELECT a FROM ApprovalDto a where a.app_doc_title like ?1 order by a.app_doc_num desc")
+        List<ApprovalDto> findByTitle(String query);
+
+        @Query("SELECT a FROM ApprovalDto a where a.app_content like ?1 order by a.app_doc_num desc")
+        List<ApprovalDto> findByContent(String query);
+
+
+
 }

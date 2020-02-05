@@ -4,6 +4,8 @@ package com.upffice.controller;
 import com.upffice.model.BoardDto;
 import com.upffice.repo.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +32,14 @@ public class BoardController {
         System.out.println(boards+"  보내준 데이터");
         return boards;
 
+    }
+    @DeleteMapping("/deleteBoard/{board_name}")
+    public ResponseEntity<String> deletePost(@PathVariable("board_name")String board_name){
+        System.out.println("Delete name =" + board_name+"...");
+
+        b_repository.deleteBoard(board_name);
+
+        return new ResponseEntity<>("Customer has been deleted!", HttpStatus.OK);
     }
 
 

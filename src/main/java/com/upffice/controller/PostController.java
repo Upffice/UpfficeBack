@@ -42,6 +42,7 @@ public class PostController {
     @DeleteMapping("/delete/{post_id}")
     public ResponseEntity<String> deletePost(@PathVariable("post_id")int post_id){
         System.out.println("Delete Customer with ID =" + post_id+"...");
+
         repository.deleteById(post_id);
 
         return new ResponseEntity<>("Customer has been deleted!", HttpStatus.OK);

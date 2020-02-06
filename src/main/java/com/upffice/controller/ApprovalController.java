@@ -32,7 +32,6 @@ public class ApprovalController {
     @Autowired
     EmployeeRepository empRepo;
 
-    private static String UPLOADED_FOLDER = "D://uploadedfiles//";
 
     //select all --결재대기함---
     @GetMapping("/{emp_id}")
@@ -144,21 +143,20 @@ public class ApprovalController {
         return dto;
     }
 
-    @PostMapping("/multiple-files")
-    public String uploadMultipleFiles(@RequestParam("file") MultipartFile[] files) throws IllegalStateException, IOException {
-/*,consumes = "multipart/form-data"*/
-        System.out.println("진입");
-//        System.out.println(descriptions);
+    @PostMapping("/multiple-files/{app_doc_num}")
+    public String uploadMultipleFiles(@PathVariable("app_doc_num") String app_doc_num,@RequestParam("file") MultipartFile[] files) throws IllegalStateException, IOException {
+        /* C:\Users\SH\Documents\TeamProject\UpfficeBack */
+        String projectPath = System.getProperty("user.dir");
 
-//        if (files.length != descriptions.length)
-//            return "Mismatching no of files are equal to description";
-        System.out.println(files);
-        System.out.println(files.length);
+        /* C:\Users\SH\Documents\TeamProject\UpfficeBack\src\assets\문서번호\파일명 */
+        String UPLOADED_FOLDER = projectPath+"\\src\\assets\\"+app_doc_num+"\\";
+//        System.out.println(UPLOADED_FOLDER);
+//        System.out.println("파일이"+files.length+"개 들어왔음");
+
         String status = "";
         File dir = new File(UPLOADED_FOLDER);
         for (int i = 0; i < files.length; i++) {
             MultipartFile file = files[i];
-//            String description = descriptions[i];
             try {
                 byte[] bytes = file.getBytes();
 
@@ -178,7 +176,7 @@ public class ApprovalController {
             }
         }
         return status;
-    }
+}
 
     @DeleteMapping("/doc/delete/{app_doc_num}")
     public String deleteTemp(@PathVariable("app_doc_num") int app_doc_num){

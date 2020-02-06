@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import javax.transaction.Transactional;
 import java.sql.Date;
 
+
 public interface EmployeeRepository extends CrudRepository<EmployeeDto, Integer> {
     /*
      * Employees 테이블에 해당하는 Repository

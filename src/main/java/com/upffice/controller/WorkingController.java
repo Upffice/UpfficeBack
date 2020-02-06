@@ -59,7 +59,6 @@ public class WorkingController {
     public String workingSaveIn(@PathVariable("empId") int empId) {
         Time nowTime = new Time(System.currentTimeMillis());
         workingRepository.save(new WorkingDto(empId, new Date(System.currentTimeMillis()), nowTime));
-        System.out.println(new Date(System.currentTimeMillis()));
         return nowTime + "";
     }
 

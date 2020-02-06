@@ -8,7 +8,6 @@ import java.sql.Date;
 @Table(name = "employees")
 public class EmployeesAddressDto {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int emp_id;
 
     @Column(name = "emp_pw")

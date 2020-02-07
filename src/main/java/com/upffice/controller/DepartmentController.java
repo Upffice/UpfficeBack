@@ -20,8 +20,6 @@ public class DepartmentController {
 
     @PostMapping("/{dep_id}")
     public String getDep_Name(@PathVariable("dep_id") int dep_id) {
-        System.out.println("getDep_name + " + dep_id);
-
         String dep_name = repository.getDepNameById(dep_id);
 
         return dep_name;

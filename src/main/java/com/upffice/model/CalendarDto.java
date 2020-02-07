@@ -1,8 +1,6 @@
 package com.upffice.model;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 
 @Entity
 @Table(name = "calendar")
@@ -41,6 +39,14 @@ public class CalendarDto {
         this.calendar_id = calendar_id;
     }
 
+    public int getEmp_id() {
+        return emp_id;
+    }
+
+    public void setEmp_id(int emp_id) {
+        this.emp_id = emp_id;
+    }
+
     public String getCalendar_name() {
         return calendar_name;
     }
@@ -61,8 +67,8 @@ public class CalendarDto {
     public String toString() {
         return "CalendarDto{" +
                 "calendar_id=" + calendar_id +
+                ", emp_id=" + emp_id +
                 ", calendar_name='" + calendar_name + '\'' +
-                ", calendar_color='" + calendar_color + '\'' +
-                '}';
+                ", calendar_color='" + calendar_color + '\'' + '}';
     }
 }

@@ -19,6 +19,9 @@ public interface PostRepository extends JpaRepository<PostDto,Integer> {
     public List<PostDto> getAllDepPosts(String board_name);
 
 
+    @Query("select p from PostDto p where p.post_subject like ?1")
+    List<PostDto> findByPost_subjectLike(String post_subject);
+
     @Modifying
     @Transactional
     @Query("UPDATE PostDto SET post_subject = ?1, post_content = ?2, created = ?3 WHERE post_id = ?4")

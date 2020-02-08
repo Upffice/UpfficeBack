@@ -15,4 +15,8 @@ public interface SurveyRepository extends CrudRepository<SurveyDto,Integer> {
 
     @Query("SELECT s FROM SurveyDto s WHERE s.end_date <?1 ORDER BY s.survey_id desc")
     public List<SurveyDto> getEndSurveys(Timestamp current_date);
+
+    @Query("select SearchSurvey from SurveyDto SearchSurvey WHERE SearchSurvey.survey_subject like ?1")
+    List<SurveyDto> findBySearchSurveyLike(String survey_subject);
+
 }

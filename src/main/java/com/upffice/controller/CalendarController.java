@@ -52,9 +52,7 @@ public class CalendarController {
         return del_count;
     }
 
-
-
-    /* UpfficeFront의 ScheduleSubMenu.vue에서 캘린더 수정 버튼 눌렀을 때 매핑 됨 : 캘린더 이름 수정 */
+    /* UpfficeFront 의 ScheduleSubMenu.vue 에서 캘린더 수정 버튼 눌렀을 때 매핑 됨 : 캘린더 이름 수정 */
     @PutMapping("/update/{emp_id}")
     public int updateCalendarName(@PathVariable("emp_id") int emp_id, @RequestBody String[] calendars) {
         int chk = 0;

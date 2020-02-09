@@ -20,7 +20,7 @@ public class CalendarController {
     CalendarRepository repository;
 
     /* UpfficeFront 의 ScheduleSubMenu.vue의 getCalendarList() 메소드와 매핑됨 : 모든 calendar 리스트를 emp_id 로 가져오기 */
-    @PostMapping("/list/{emp_id}")
+    @GetMapping("/list/{emp_id}")
     public List<CalendarDto> getCalendar(@PathVariable("emp_id") int emp_id) {
         List<CalendarDto> _calendarDto = repository.getCalendarByEmpId(emp_id);
 
@@ -52,9 +52,7 @@ public class CalendarController {
         return del_count;
     }
 
-
-
-    /* UpfficeFront의 ScheduleSubMenu.vue에서 캘린더 수정 버튼 눌렀을 때 매핑 됨 : 캘린더 이름 수정 */
+    /* UpfficeFront 의 ScheduleSubMenu.vue 에서 캘린더 수정 버튼 눌렀을 때 매핑 됨 : 캘린더 이름 수정 */
     @PutMapping("/update/{emp_id}")
     public int updateCalendarName(@PathVariable("emp_id") int emp_id, @RequestBody String[] calendars) {
         int chk = 0;

@@ -20,7 +20,7 @@ public class CalendarController {
     CalendarRepository repository;
 
     /* UpfficeFront 의 ScheduleSubMenu.vue의 getCalendarList() 메소드와 매핑됨 : 모든 calendar 리스트를 emp_id 로 가져오기 */
-    @PostMapping("/list/{emp_id}")
+    @GetMapping("/list/{emp_id}")
     public List<CalendarDto> getCalendar(@PathVariable("emp_id") int emp_id) {
         List<CalendarDto> _calendarDto = repository.getCalendarByEmpId(emp_id);
 

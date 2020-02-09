@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -52,4 +54,37 @@ public class ScheduleController {
         return _scheduleDto;
     }
 
+    /* UpfficeFront 의 ScheduleDetailModal.vue 에서 수정 버튼 눌렀을 때 매핑 됨 : 캘린더 이름 수정 */
+    @PutMapping("/update/{emp_id}")
+    public int updateCalendarName(@PathVariable("emp_id") int emp_id, @RequestBody ScheduleDto schedule) {
+        System.out.println("sche + "+ schedule);
+        int chk = 0;
+        int sche_id = schedule.getSche_id();
+
+        // 수정 된 행의 갯수를 받아온다. chk이 1이면 1개의 row가 수정 되었다는 뜻. : 확인 할 때 사용하면 된다
+        chk = repository.updateSchedule(schedule.getCalendar_id(), schedule.getSche_name(), schedule.getSche_start_date(),
+                                            schedule.getSche_start_time(), schedule.getSche_end_date(),
+                                            schedule.getSche_end_time(), schedule.getSche_place(), schedule.getSche_detail(), emp_id, sche_id);
+
+        return chk;
+    }
+
+    /* ScheduleDetailModal.vue 에서 스케줄 삭제 할 때 사용함. */
+    @DeleteMapping("/list/{emp_id}")
+    public int deleteSchedule(@PathVariable("emp_id") int emp_id, @RequestParam("schedule_id") int schedule_id) {
+        int del_count = 0;  // delete 한 row 개수 return 하기 위한 변수
+
+        // 수정 된 행의 갯수를 받아온다. chk이 1이면 1개의 row가 수정 되었다는 뜻. : 확인 할 때 사용하면 된다
+        del_count = repository.deleteSchedule(emp_id, schedule_id);
+
+        return del_count;
+    }
+
+    /* Calendar.vue 에서 스케줄 검색 할 때 사용함. */
+    @GetMapping("/search/{emp_id}")
+    public List<ScheduleDto> searchSchedule(@PathVariable("emp_id") int emp_id, @RequestParam("keyword") String keyword) {
+        List<ScheduleDto> schedules = repository.searchScheduleByScheName(emp_id, "%" + keyword + "%");
+
+        return schedules;
+    }
 }

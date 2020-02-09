@@ -38,7 +38,6 @@ public class CalendarController {
     /* ScheduleSubMenu.vue 에서 Calendar_id 로 캘린더 목록 삭제 할 때 사용함. */
     @DeleteMapping("/list/{emp_id}")
     public int deleteSchedule(@PathVariable("emp_id") int emp_id, @RequestParam("calendar_id") String calendars) {
-        System.out.println(" delete schedule : " + calendars);
         int del_count = 0;  // delete 한 row 개수 return 하기 위한 변수
 
         String[] calendars_id = calendars.split(",");   // 콤마 기준으로 String 나누기

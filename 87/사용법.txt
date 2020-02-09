@@ -1,7 +1,0 @@
-https://blog.dork94.com/82
-
-사용법
-mariaDB [(none)]  > source "sql파일 경로" 
-
-ex)파일경로 : /root/Desktop/test.sql 일 때
-mariaDB [(none)]  > source /root/Desktop/test.sql 

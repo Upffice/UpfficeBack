@@ -56,8 +56,7 @@ public class ScheduleController {
 
     /* UpfficeFront 의 ScheduleDetailModal.vue 에서 수정 버튼 눌렀을 때 매핑 됨 : 캘린더 이름 수정 */
     @PutMapping("/update/{emp_id}")
-    public int updateCalendarName(@PathVariable("emp_id") int emp_id, @RequestBody ScheduleDto schedule) {
-        System.out.println("sche + "+ schedule);
+    int updateSchedule(@PathVariable("emp_id") int emp_id, @RequestBody ScheduleDto schedule) {
         int chk = 0;
         int sche_id = schedule.getSche_id();
 

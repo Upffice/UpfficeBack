@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
-import java.sql.Time;
+import java.lang.String;
 import java.util.Date;
 import java.util.List;
 
@@ -29,8 +29,8 @@ public interface ScheduleRepository extends CrudRepository<ScheduleDto, Integer>
     @Query("UPDATE ScheduleDto SET calendar_id=?1, sche_name=?2, sche_start_date=?3, sche_start_time=?4, " +
             "sche_end_date=?5, sche_end_time=?6, sche_place=?7, sche_detail=?8" +
             " WHERE emp_id=?9 AND sche_id=?10")
-    int updateSchedule(int calendar_id, String sche_name, Date sche_start_date, Time sche_start_time, Date sche_end_date,
-                       Time sche_end_time, String sche_place, String sche_detail, int emp_id, int sche_id);
+    int updateSchedule(int calendar_id, String sche_name, Date sche_start_date, String sche_start_time,
+                       Date sche_end_date,String sche_end_time, String sche_place, String sche_detail, int emp_id, int sche_id);
 
     // schedule delete 하는 메소드
     @Modifying
@@ -41,5 +41,4 @@ public interface ScheduleRepository extends CrudRepository<ScheduleDto, Integer>
     // 일정 이름으로 검색
     @Query("SELECT s FROM ScheduleDto s WHERE s.emp_id=?1 AND s.sche_name like ?2")
     List<ScheduleDto> searchScheduleByScheName(int emp_id, String sche_name);
-
 }

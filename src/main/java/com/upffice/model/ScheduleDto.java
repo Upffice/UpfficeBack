@@ -1,12 +1,8 @@
 package com.upffice.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.upffice.controller.SqlTimeDeserializer;
-
 import javax.persistence.*;
 import java.sql.Date;
-import java.sql.Time;
+import java.lang.String;
 
 @Entity
 @Table(name = "schedule")
@@ -26,18 +22,14 @@ public class ScheduleDto {
     @Column(name = "sche_start_date")
     private Date sche_start_date;
 
-    @JsonFormat(pattern = "HH:mm")
-    @JsonDeserialize(using = SqlTimeDeserializer.class)
     @Column(name = "sche_start_time")
-    private Time sche_start_time;
+    private String sche_start_time;
 
     @Column(name = "sche_end_date")
     private Date sche_end_date;
 
-    @JsonFormat(pattern = "HH:mm")
-    @JsonDeserialize(using = SqlTimeDeserializer.class)
     @Column(name = "sche_end_time")
-    private Time sche_end_time;
+    private String sche_end_time;
 
     @Column(name = "sche_place")
     private String sche_place;
@@ -54,7 +46,7 @@ public class ScheduleDto {
     public ScheduleDto() {
     }
 
-    public ScheduleDto(int emp_id, int calendar_id, String sche_name, Date sche_start_date, Time sche_start_time, Date sche_end_date, Time sche_end_time, String sche_place, String sche_detail) {
+    public ScheduleDto(int emp_id, int calendar_id, String sche_name, Date sche_start_date, String sche_start_time, Date sche_end_date, String sche_end_time, String sche_place, String sche_detail) {
         this.emp_id = emp_id;
         this.calendar_id = calendar_id;
         this.sche_name = sche_name;
@@ -90,11 +82,11 @@ public class ScheduleDto {
         this.sche_start_date = sche_start_date;
     }
 
-    public Time getSche_start_time() {
+    public String getSche_start_time() {
         return sche_start_time;
     }
 
-    public void setSche_start_time(Time sche_start_time) {
+    public void setSche_start_time(String sche_start_time) {
         this.sche_start_time = sche_start_time;
     }
 
@@ -106,11 +98,11 @@ public class ScheduleDto {
         this.sche_end_date = sche_end_date;
     }
 
-    public Time getSche_end_time() {
+    public String getSche_end_time() {
         return sche_end_time;
     }
 
-    public void setSche_end_time(Time sche_end_time) {
+    public void setSche_end_time(String sche_end_time) {
         this.sche_end_time = sche_end_time;
     }
 

@@ -8,13 +8,11 @@ import com.upffice.repo.ApprovalRepository;
 import com.upffice.repo.DepartmentRepository;
 import com.upffice.repo.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -177,6 +175,53 @@ public class ApprovalController {
         }
         return status;
 }
+
+    @PostMapping("/multiple-files-download/{app_doc_num}")
+    public InputStreamResource downloadMultipleFiles(@PathVariable("app_doc_num") String app_doc_num,@RequestBody String filename) throws FileNotFoundException {
+        System.out.println("진입" + filename+"##");
+
+        /* C:\Users\SH\Documents\TeamProject\UpfficeBack */
+        String projectPath = System.getProperty("user.dir");
+
+        /* C:\Users\SH\Documents\TeamProject\UpfficeBack\src\assets\문서번호\파일명 */
+        String UPLOADED_FOLDER = projectPath+"\\src\\assets\\"+app_doc_num+"\\";
+        String status = "";
+        File dirFile=new File(UPLOADED_FOLDER);
+        File []fileList=dirFile.listFiles();
+        InputStreamResource input = null;
+        File uploadFile = new File(UPLOADED_FOLDER
+                + File.separator + filename);
+        BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(uploadFile));
+        InputStreamResource inputStreamResource = new InputStreamResource(inputStream);
+
+        return inputStreamResource;
+    }
+
+    @GetMapping("/down/{app_doc_num}")
+    public String[] downloadLink(@PathVariable("app_doc_num") int app_doc_num){
+        /* C:\Users\SH\Documents\TeamProject\UpfficeBack */
+        String projectPath = System.getProperty("user.dir");
+
+        /* C:\Users\SH\Documents\TeamProject\UpfficeBack\src\assets\문서번호\파일명 */
+        String UPLOADED_FOLDER = projectPath+"\\src\\assets\\"+app_doc_num+"\\";
+        String status = "";
+        File dirFile=new File(UPLOADED_FOLDER);
+        File []fileList=dirFile.listFiles();
+        InputStreamResource input = null;
+        String []filename= new String[fileList.length];
+
+            for(int i=0; i<fileList.length; i++){
+                File tempFile = fileList[i];
+            if(tempFile.isFile()) {
+                String tempPath=tempFile.getParent();
+                String tempFileName=tempFile.getName();
+                System.out.println("Path="+tempPath);
+                System.out.println("FileName="+tempFileName);
+               filename[i] = tempFileName;
+            }
+        }
+        return filename;
+    }
 
     @DeleteMapping("/doc/delete/{app_doc_num}")
     public String deleteTemp(@PathVariable("app_doc_num") int app_doc_num){

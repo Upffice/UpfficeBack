@@ -1,7 +1,6 @@
 package com.upffice.repo;
 
 import com.upffice.model.OutAddressDto;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

@@ -1,5 +1,6 @@
 package com.upffice.repo;
 
+import com.upffice.model.ApprovalDto;
 import com.upffice.model.EmployeesAddressDto;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

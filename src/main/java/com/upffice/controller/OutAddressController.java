@@ -3,6 +3,8 @@ package com.upffice.controller;
 import com.upffice.model.OutAddressDto;
 import com.upffice.repo.OutAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -66,6 +68,17 @@ public class OutAddressController {
         return _outAddress;
 
     }
+
+    @DeleteMapping("/outaddress/{id}")
+    public ResponseEntity<String> deleteOutAddress(@PathVariable("id") int id) {
+        System.out.println("Delete OutAddress with ID = " + id + "...");
+
+       repository.deleteById(id);
+
+        return new ResponseEntity<>("OutAddress has been deleted!", HttpStatus.OK);
+    }
+
+
 
 
 }

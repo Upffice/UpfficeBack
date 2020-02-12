@@ -16,11 +16,11 @@ public interface ScheduleRepository extends CrudRepository<ScheduleDto, Integer>
      */
 
     // between 써서 날짜 사이에 ?1 가 끼어있는 일정들 출력 - 전부 출력
-    @Query("SELECT DISTINCT s FROM ScheduleDto s WHERE s.emp_id=?1 AND ?2 BETWEEN s.sche_start_date AND s.sche_end_date")
+    @Query("SELECT DISTINCT s FROM ScheduleDto s WHERE s.emp_id=?1 AND ?2 BETWEEN s.sche_start_date AND s.sche_end_date ORDER BY s.sche_start_time")
     List<ScheduleDto> getScheduleByEmpId(int emp_id, Date date);
 
     // between 써서 날짜 사이에 ?1 가 끼어있는 일정들 - calendarId 로 캘린더 목록 구분해 출력
-    @Query("SELECT DISTINCT s FROM ScheduleDto s WHERE s.emp_id=?1 AND s.calendar_id=?2 AND ?3 BETWEEN s.sche_start_date and s.sche_end_date")
+    @Query("SELECT DISTINCT s FROM ScheduleDto s WHERE s.emp_id=?1 AND s.calendar_id=?2 AND ?3 BETWEEN s.sche_start_date and s.sche_end_date ORDER BY s.sche_start_time")
     List<ScheduleDto> getScheduleByScheId(int emp_id, int calendar_id, Date date);
 
     /* emp_id와 calendar_id 로 캘린더 이름 수정*/
@@ -39,6 +39,6 @@ public interface ScheduleRepository extends CrudRepository<ScheduleDto, Integer>
     int deleteSchedule(int emp_id, int calendar_id);
 
     // 일정 이름으로 검색
-    @Query("SELECT s FROM ScheduleDto s WHERE s.emp_id=?1 AND s.sche_name like ?2")
+    @Query("SELECT s FROM ScheduleDto s WHERE s.emp_id=?1 AND s.sche_name like ?2 ORDER BY s.sche_start_date")
     List<ScheduleDto> searchScheduleByScheName(int emp_id, String sche_name);
 }

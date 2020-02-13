@@ -130,7 +130,7 @@ public class EmployeesAddressController {
         String projectPath = System.getProperty("user.dir");
 
         /* C:\Users\elfin\UpfficeProject\UpfficeBack\src\assets\문서번호\파일명 */
-        String UPLOADED_FOLDER = projectPath + "\\src\\assets\\m_file\\";
+        String UPLOADED_FOLDER = projectPath + "\\src\\main\\resources\\static\\m_file\\";
 //        System.out.println(UPLOADED_FOLDER);
 //        System.out.println("파일이"+files.length+"개 들어왔음");
 
@@ -168,7 +168,7 @@ public class EmployeesAddressController {
         String projectPath = System.getProperty("user.dir");
 
         /* C:\Users\elfin\UpfficeProject\UpfficeBack\src\assets\문서번호\파일명 */
-        String UPLOADED_FOLDER = projectPath + "\\src\\assets\\m_file\\";
+        String UPLOADED_FOLDER = projectPath + "\\src\\main\\resources\\static\\m_file\\";
         String status = "";
         File dirFile = new File(UPLOADED_FOLDER);
         File[] fileList = dirFile.listFiles();
@@ -190,7 +190,7 @@ public class EmployeesAddressController {
         String projectPath = System.getProperty("user.dir");
 
         /* C:\Users\elfin\UpfficeProject\UpfficeBack\src\m_file\문서번호\파일명 */
-        String UPLOADED_FOLDER = projectPath + "\\src\\assets\\m_file\\";
+        String UPLOADED_FOLDER = projectPath + "\\src\\main\\resources\\static\\m_file\\";
         String status = "";
         File dirFile = new File(UPLOADED_FOLDER);
         File[] fileList = dirFile.listFiles();

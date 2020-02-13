@@ -2,10 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90150a3a-f255-4f41-a065-888b92cd8f1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/가격_결정에_대한_품의문.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/가격책정_원가이용표.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/가족수당_지급(지급중지)신청서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/가지급_품의서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/개발_아이디어_제안서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/개발계획표.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/개선안_제안서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/개인별_업무목표설정_및_판정표.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/개인일일업무일지.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/거래명세서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/견적서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/견적서_2.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/견적서_3.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/경력증명서.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/경영진단_결과보고서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/근로계약서(상근).doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/근로계약서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/물품견적서(회사별).doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/비밀유지_계약서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/사업계획서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/사업계획서_2.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/아이디어제안서(상세).doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/양해각서_업무협력및공동프로젝트.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/연봉근로계약서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/이력서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/일일업무일지.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/제안서(제품거래).doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/제품개발_스케줄.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/표준사업계획서.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/m_file/표준제품견적서.doc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/50/김지영인.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/50/사용법.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/upffice/controller/EmployeesAddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/upffice/controller/EmployeesAddressController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +235,7 @@
       <workItem from="1580860624386" duration="11089000" />
       <workItem from="1581038748379" duration="8013000" />
       <workItem from="1581295470393" duration="39155000" />
-      <workItem from="1581516456063" duration="3351000" />
+      <workItem from="1581516456063" duration="3564000" />
     </task>
     <task id="LOCAL-00001" summary="search기능">
       <created>1579227276082</created>
@@ -244,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581490559643</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="file_upload/download">
+      <created>1581556872305</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581556872305</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +343,8 @@
     <MESSAGE value="manager 외부주소록 정렬" />
     <MESSAGE value="/" />
     <MESSAGE value="upload download" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload download" />
+    <MESSAGE value="file_upload/download" />
+    <option name="LAST_COMMIT_MESSAGE" value="file_upload/download" />
   </component>
   <component name="WindowStateProjectService">
     <state x="339" y="181" key="#Assign_Data_Sources" timestamp="1578642044201">
@@ -347,46 +383,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578558992970" />
-    <state x="181" y="64" width="890" height="815" key="CommitChangelistDialog2" timestamp="1581490555842">
+    <state x="181" y="64" width="890" height="815" key="CommitChangelistDialog2" timestamp="1581556868227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="181" y="64" width="890" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581490555842" />
+    <state x="181" y="64" width="890" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581556868227" />
     <state x="241" y="191" key="FileChooserDialogImpl" timestamp="1580180615484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="241" y="191" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580180615484" />
-    <state width="1877" height="249" key="GridCell.Tab.0.bottom" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.0.bottom" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.0.center" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.0.center" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.0.left" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.0.left" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.0.right" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.0.right" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.1.bottom" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.1.bottom" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.1.center" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.1.center" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.1.left" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.1.left" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
-    <state width="1877" height="249" key="GridCell.Tab.1.right" timestamp="1581516144683">
+    <state width="1182" height="249" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
+    <state width="1182" height="249" key="GridCell.Tab.1.right" timestamp="1581556981149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="249" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581516144683" />
+    <state width="1182" height="249" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581556981149" />
     <state x="184" y="91" key="MergeDialog" timestamp="1580980326652">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -403,18 +439,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580362207390" />
-    <state x="199" y="159" key="Vcs.Push.Dialog.v2" timestamp="1580978850861">
+    <state x="199" y="159" key="Vcs.Push.Dialog.v2" timestamp="1581556900157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="199" y="159" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580978850861" />
-    <state x="764" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581556793533">
+    <state x="199" y="159" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581556900157" />
+    <state x="764" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581557043370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="764" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581556793533" />
-    <state x="743" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1581299442947">
+    <state x="764" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581557043370" />
+    <state x="0" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1581557025366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="743" y="232" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581299442947" />
+    <state x="0" y="232" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581557025366" />
     <state x="747" y="310" key="git4idea.merge.GitMergeDialog" timestamp="1580276682843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

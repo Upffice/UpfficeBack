@@ -79,10 +79,11 @@ public class PostController {
         return dep_post;
     }
 
-    @GetMapping("/post_subject/{post_subject}")
-    public List<PostDto> findByPost_subjectLike(@PathVariable("post_subject") String post_subject) {
+    @GetMapping("/pst/SearchSubject/{SearchSubject}")
+    public List<PostDto> findByPost_subjectLike(@PathVariable("SearchSubject") String SearchSubject) {
         System.out.println("제목으로 찾기");
-        List<PostDto> subject = repository.findByPost_subjectLike("%"+post_subject+"%");
+        List<PostDto> subject = repository.findBySearchSubjectLike("%"+ SearchSubject + "%");
+        System.out.println(subject+">>>>>리턴값");
         return subject;
     }
 

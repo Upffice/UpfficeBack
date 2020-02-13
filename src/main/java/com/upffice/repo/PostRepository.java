@@ -19,8 +19,8 @@ public interface PostRepository extends JpaRepository<PostDto,Integer> {
     public List<PostDto> getAllDepPosts(String board_name);
 
 
-    @Query("select p from PostDto p where p.post_subject like ?1")
-    List<PostDto> findByPost_subjectLike(String post_subject);
+    @Query("select SearchSubject from PostDto SearchSubject WHERE SearchSubject.post_subject like ?1")
+    List<PostDto> findBySearchSubjectLike(String post_subject);
 
     @Modifying
     @Transactional

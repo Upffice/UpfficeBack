@@ -147,9 +147,7 @@ public class ApprovalController {
         String projectPath = System.getProperty("user.dir");
 
         /* C:\Users\SH\Documents\TeamProject\UpfficeBack\src\assets\문서번호\파일명 */
-        String UPLOADED_FOLDER = projectPath+"\\src\\assets\\"+app_doc_num+"\\";
-//        System.out.println(UPLOADED_FOLDER);
-//        System.out.println("파일이"+files.length+"개 들어왔음");
+        String UPLOADED_FOLDER = projectPath + "\\src\\main\\resources\\static\\sign_file\\"+app_doc_num+"\\";
 
         String status = "";
         File dir = new File(UPLOADED_FOLDER);
@@ -178,13 +176,13 @@ public class ApprovalController {
 
     @PostMapping("/multiple-files-download/{app_doc_num}")
     public InputStreamResource downloadMultipleFiles(@PathVariable("app_doc_num") String app_doc_num,@RequestBody String filename) throws FileNotFoundException {
-        System.out.println("진입" + filename+"##");
 
         /* C:\Users\SH\Documents\TeamProject\UpfficeBack */
         String projectPath = System.getProperty("user.dir");
 
         /* C:\Users\SH\Documents\TeamProject\UpfficeBack\src\assets\문서번호\파일명 */
-        String UPLOADED_FOLDER = projectPath+"\\src\\assets\\"+app_doc_num+"\\";
+        String UPLOADED_FOLDER = projectPath + "\\src\\main\\resources\\static\\sign_file\\"+app_doc_num+"\\";
+
         String status = "";
         File dirFile=new File(UPLOADED_FOLDER);
         File []fileList=dirFile.listFiles();
@@ -203,7 +201,8 @@ public class ApprovalController {
         String projectPath = System.getProperty("user.dir");
 
         /* C:\Users\SH\Documents\TeamProject\UpfficeBack\src\assets\문서번호\파일명 */
-        String UPLOADED_FOLDER = projectPath+"\\src\\assets\\"+app_doc_num+"\\";
+        String UPLOADED_FOLDER = projectPath + "\\src\\main\\resources\\static\\sign_file\\"+app_doc_num+"\\";
+
         String status = "";
         File dirFile=new File(UPLOADED_FOLDER);
         File []fileList=dirFile.listFiles();

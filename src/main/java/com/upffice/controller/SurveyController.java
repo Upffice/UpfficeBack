@@ -1,6 +1,7 @@
 package com.upffice.controller;
 
 
+import com.upffice.model.PostDto;
 import com.upffice.model.SurveyDto;
 import com.upffice.repo.SurveyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +64,13 @@ public class SurveyController {
 
         List<SurveyDto> survey = repository.getEndSurveys(current_date);
 
+        return survey;
+    }
+    @GetMapping("/survey/SearchSurvey/{SearchSurvey}")
+    public List<SurveyDto> findBySearchSurveyLike(@PathVariable("SearchSurvey") String SearchSurvey) {
+        System.out.println("제목으로 찾기");
+        List<SurveyDto> survey = repository.findBySearchSurveyLike("%"+ SearchSurvey + "%");
+        System.out.println(survey+">>>>>리턴값");
         return survey;
     }
 

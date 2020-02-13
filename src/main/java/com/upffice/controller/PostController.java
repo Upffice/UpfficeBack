@@ -3,14 +3,11 @@ package com.upffice.controller;
 import com.upffice.model.PostDto;
 import com.upffice.repo.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -77,6 +74,14 @@ public class PostController {
         List<PostDto> dep_post =repository.getAllDepPosts(board_name);
         System.out.println(dep_post+ "-----dep Post");
         return dep_post;
+    }
+
+    @GetMapping("/pst/SearchSubject/{SearchSubject}")
+    public List<PostDto> findByPost_subjectLike(@PathVariable("SearchSubject") String SearchSubject) {
+        System.out.println("제목으로 찾기");
+        List<PostDto> subject = repository.findBySearchSubjectLike("%"+ SearchSubject + "%");
+        System.out.println(subject+">>>>>리턴값");
+        return subject;
     }
 
 }

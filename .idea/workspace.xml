@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90150a3a-f255-4f41-a065-888b92cd8f1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/58bd3288-fccc-45d5-bfcb-71dd90a9177e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/58bd3288-fccc-45d5-bfcb-71dd90a9177e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10005.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10006.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10007.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10008.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10009.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10010.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10011.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10012.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10013.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10015.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10016.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10017.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10018.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10019.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10021.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/emp_img/10022.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +170,7 @@
       <workItem from="1581295470393" duration="39155000" />
       <workItem from="1581516456063" duration="4619000" />
       <workItem from="1581562343821" duration="3424000" />
-      <workItem from="1581674016590" duration="964000" />
+      <workItem from="1581674016590" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="search기능">
       <created>1579227276082</created>
@@ -252,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581562738219</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="resources 에 emp_img 추가">
+      <created>1581675025226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1581675025226</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +301,8 @@
     <MESSAGE value="upload download" />
     <MESSAGE value="file_upload/download" />
     <MESSAGE value="resources//downloadfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="resources//downloadfile" />
+    <MESSAGE value="resources 에 emp_img 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="resources 에 emp_img 추가" />
   </component>
   <component name="WindowStateProjectService">
     <state x="339" y="181" key="#Assign_Data_Sources" timestamp="1578642044201">
@@ -357,10 +341,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578558992970" />
-    <state x="657" y="13" width="890" height="815" key="CommitChangelistDialog2" timestamp="1581562737655">
+    <state x="657" y="13" width="890" height="815" key="CommitChangelistDialog2" timestamp="1581675022383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="657" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581562737655" />
+    <state x="657" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581675022383" />
     <state x="181" y="64" width="890" height="815" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581558240271" />
     <state x="241" y="191" key="FileChooserDialogImpl" timestamp="1580180615484">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -424,10 +408,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580362207390" />
-    <state x="159" y="126" key="Vcs.Push.Dialog.v2" timestamp="1581562797786">
+    <state x="159" y="126" key="Vcs.Push.Dialog.v2" timestamp="1581675033398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="159" y="126" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581562797786" />
+    <state x="159" y="126" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581675033398" />
     <state x="199" y="159" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581557111905" />
     <state x="459" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1581674057244">
       <screen x="0" y="0" width="1536" height="824" />

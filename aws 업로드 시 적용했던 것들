@@ -1,0 +1,2 @@
+1. controller @CrossOrigin 주소부분 주석처리
+2. employeesController 파일관련 경로 ₩₩ -> / 로 바꾸기
